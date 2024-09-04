@@ -1,0 +1,27 @@
+name: "01 - Building Blocks"
+
+#event trigger section
+on:
+  # Triggers the workflow on push or workflow_dispatch ( manual trigger)
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+    branches:
+    - main
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # this workflow contains two jobs
+  echo-hello:
+    name: "Say Hello"
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      run: echo "Hello, World!"
+  echo-goodbye:
+    name: "Say goodbye"
+    runs-one: ubuntu-latest
+    steps:
+      run: echo "Goodbye!"
