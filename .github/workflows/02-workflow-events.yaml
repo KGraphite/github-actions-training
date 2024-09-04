@@ -1,9 +1,19 @@
 name: 02 - Workflow Events
 on:
-    push
+    push:
+    schedule:
+      - cron: "35 13 * 09 WED"
+      - cron: "00 00 10 09 *"
+    workflow_dispatch:
 jobs:
     echo:
         runs-on: ubuntu-latest
         steps:
             - name: "Show the trigger"
               run: echo '${{github.event_name}}'
+    birthday-greetings:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Birthday greetings"
+              if: github.event.schedule == '0 00 10 09 *'
+              run: echo '${{github.event_name}}' Happy Birthday!
