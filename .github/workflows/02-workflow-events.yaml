@@ -2,7 +2,7 @@ name: 02 - Workflow Events
 on:
     push:
     schedule:
-      - cron: "35 13 * 09 WED"
+      - cron: "*/5 * * 09 WED"
       - cron: "00 00 10 09 *"
       - cron: "00 00 04 09 *"
     workflow_dispatch:
