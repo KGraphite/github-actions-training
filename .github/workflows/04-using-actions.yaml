@@ -1,6 +1,6 @@
 name: 04 -  Using Actions
 on:
-    push:
+    #push:
     workflow_dispatch:
 jobs:
     build:
@@ -22,7 +22,7 @@ jobs:
                 node-version: 20.x
             - name: install dependencies
               run : npm ci
-              #execute run command in specific directory
+              ##execute run command in specific directory
               #working-directory: 04-using-actions/react-app
             - name: Run unit tests
               #working-directory: 04-using-actions/react-app
