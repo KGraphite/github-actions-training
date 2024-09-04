@@ -22,6 +22,6 @@ jobs:
     - run: echo "Hello, World!"
   echo-goodbye:
     name: "Say goodbye"
-    runs-one: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     -  run: echo "Goodbye!"
