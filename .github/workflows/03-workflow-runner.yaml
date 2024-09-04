@@ -9,7 +9,7 @@ jobs:
             - name: Show OS
               run: |
                 echo This job is running on an Ubuntu runner.
-                ${{runner.os}}
+                echo ${{runner.os}}
     windows-echo:
         runs-on: windows-latest
         steps:
@@ -17,13 +17,13 @@ jobs:
               shell: bash 
               run: |
                 echo This job is running on an Windows runner.
-                ${{runner.os}}
+                echo ${{runner.os}}
     mac-echo:
         runs-on: macos-latest
         steps:
             - name: Show OS 
               run: | 
                 echo This job is running on an Macos runner.
-                ${{runner.os}}
+                echo ${{runner.os}}
                    
     
