@@ -8,6 +8,10 @@ jobs:
         steps:
             - name: Checkout Code
               uses: actions/checkout@v4
+              with:
+                sparse-checkout: |
+                    ../../04-using-actions
+                submodules: true
             - name: Printing Folders
               run: | 
                 ls -ltra ${{github.workspace}}
