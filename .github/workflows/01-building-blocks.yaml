@@ -3,9 +3,9 @@ name: "01 - Building Blocks"
 #event trigger section
 on:
   # Triggers the workflow on push or workflow_dispatch ( manual trigger)
-  push:
-    branches:
-    - main
+  # push:
+  #   branches:
+  #   - main
   workflow_dispatch:
     branches:
     - main
@@ -19,8 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - run: echo "Hello, World!" |
-           exit 1
+    - run: echo "Hello, World!"
   echo-goodbye:
     name: "Say goodbye"
     runs-on: ubuntu-latest
