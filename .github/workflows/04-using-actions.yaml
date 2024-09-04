@@ -5,12 +5,14 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+        # 0. checkout the code from the repository
+        # 1. install dependencies of the react app
+        # 2. execute automated tests
         steps:
             - name: Checkout Code
               uses: actions/checkout@v4
             - name: Printing Folders
-              run: | 
-                ls -ltra ${{github.workspace}}
+              run: ls
             - name: Setup Node
               uses: actions/setup-node@v4
               with:
