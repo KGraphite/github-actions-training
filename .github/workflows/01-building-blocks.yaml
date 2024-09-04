@@ -19,9 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      run: echo "Hello, World!"
+    - run: echo "Hello, World!"
   echo-goodbye:
     name: "Say goodbye"
     runs-one: ubuntu-latest
     steps:
-      run: echo "Goodbye!"
+    -  run: echo "Goodbye!"
