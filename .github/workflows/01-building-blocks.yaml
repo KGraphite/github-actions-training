@@ -6,22 +6,20 @@ on:
   # push:
   #   branches:
   #   - main
-  workflow_dispatch:
-    branches:
-    - main
+  workflow_dispatch
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # this workflow contains two jobs
   echo-hello:
-    name: "Say Hello"
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - run: echo "Hello, World!"
+      - name: "Say Hello"
+        run: echo "Hello, World!"
   echo-goodbye:
-    name: "Say goodbye"
     runs-on: ubuntu-latest
     steps:
-    -  run: echo "Goodbye!"
+    - name: "Say goodbye"
+      run: echo "Goodbye!"
