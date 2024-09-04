@@ -7,19 +7,22 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Show OS
-              run: echo | This job is running on an Ubuntu runner.
-                   ${{runner.os}}
+              run: |
+                echo This job is running on an Ubuntu runner.
+                ${{runner.os}}
     windows-echo:
         runs-on: windows-latest
         steps:
             - name: Show OS 
-              run: echo | This job is running on an Windows runner.
-                   ${{runner.os}}
+              run: |
+                echo This job is running on an Windows runner.
+                ${{runner.os}}
     mac-echo:
         runs-on: macos-latest
         steps:
             - name: Show OS 
-              run: echo | This job is running on an Macos runner.
-                    ${{runner.os}}
+              run: | 
+                echo This job is running on an Macos runner.
+                ${{runner.os}}
                    
     
