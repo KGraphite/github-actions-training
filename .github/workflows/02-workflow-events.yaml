@@ -16,5 +16,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: "Birthday greetings"
-              if: (github.event.schedule == '0 00 10 09 *') || (github.event.schedule == '0 00 10 09 *')
+              if: (github.event.schedule == '0 00 10 09 *') || (github.event.schedule == '0 00 04 09 *')
               run: echo '${{github.event_name}}' Happy Birthday!
