@@ -12,9 +12,6 @@ on:
             debug:
                 type: boolean
                 default: false
-            input_VAR:
-                type: string
-                default: hello world from default!
 
 jobs:
     echo-data:
@@ -33,11 +30,16 @@ jobs:
                 echo Run ID: ${{github.run_id}}
                 echo Run number: ${{github.run_number}}
             - name: Retrieve Variable
+              run: |
+                echo Variable value: ${{vars.MY_VAR}}
+            - name: Print Env variables
               env:
                 MY_OVERWRITTEN_VAR: step
               run: |
-                echo Variable value: ${{vars.MY_VAR}}
-                echo Input Variable value: ${{inputs.input_VAR}}
+                echo Workflow env: ${{env.MY_WORKFLOW_VAR}}
+                echo Overwritten env: ${{env.MY_OVERWRITTEN_VAR}}
+            - name: Print Env variables2
+              run: |
                 echo Workflow env: ${{env.MY_WORKFLOW_VAR}}
                 echo Overwritten env: ${{env.MY_OVERWRITTEN_VAR}}
                 
