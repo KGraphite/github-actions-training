@@ -4,9 +4,9 @@ env:
     MY_WORKFLOW_VAR: workflow
     MY_OVERWRITTEN_VAR: workflow
 on: 
-    push:
-        branches:
-            - main
+    # push:
+    #     branches:
+    #         - main
     workflow_dispatch:
         inputs:
             debug:
