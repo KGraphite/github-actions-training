@@ -1,5 +1,5 @@
 name: 07 -  Using Expressions
-
+run-name: Using Expressions | DEBUG - <'ON' if the debug input is true, 'OFF' otherwise>
 
 on:
     push:
