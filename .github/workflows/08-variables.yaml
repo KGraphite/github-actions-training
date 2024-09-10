@@ -2,7 +2,7 @@ name: 08 - variables
 
 on:
   push:
-  dispatch_workflow:
+  workflow_dispatch:
 env:
   WORKFLOW_VAR: 'I am a workflow var'
   OVERWRITTEN: 'I will be overwritten'
