@@ -1,6 +1,7 @@
 name: 09 - Using Functions
 
-do:
+on:
+  #push:
   pull_request:
   workflow_dispatch:
 
@@ -8,6 +9,9 @@ jobs:
   echo1:
     runs-on: ubuntu-latest
     steps:
+      - name: Print Env Variables
+        run: |
+          echo "Step env var: $STEP_VAR"
       - name: Failing step
         run: exit 1
       - name: I will be skipped
