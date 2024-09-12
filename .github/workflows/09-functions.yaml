@@ -26,4 +26,3 @@ jobs:
         if: ${{ cancelled() }}
         run: |
           echo "I will print onky when the workflow is cancelled."
-    	
