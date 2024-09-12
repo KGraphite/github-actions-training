@@ -9,6 +9,9 @@ jobs:
   echo1:
     runs-on: ubuntu-latest
     steps:
+      - name: sleep for 20 seconds
+        run: sleep 20s
+        shell: bash
       - name: Print Env Variables
         run: |
           echo "Step env var: $STEP_VAR"
@@ -40,6 +43,3 @@ jobs:
         if: ${{ failure() && !cancelled() }} && ${{ contains(toJson(github.event.pull_request.name), 'fix') }}
         run: | 
           echo "${{ toJSON(github.event.pull_request.labels)}}"
-      - name: sleep for 20 seconds
-        run: sleep 20s
-        shell: bash
