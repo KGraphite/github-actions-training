@@ -30,3 +30,6 @@ jobs:
         if: ${{ cancelled() }}
         run: |
           echo "I will print onky when the workflow is cancelled."
+      - name: sleep for 20 seconds
+        run: sleep 20s
+        shell: bash
