@@ -5,8 +5,8 @@ on:
     workflow_dispatch:
         inputs:
             name: pass-unit-tests
-            type: Boolean
-            default: false
+            type: 'Boolean'
+            default: 'false'
 jobs:
     lint-build:
         runs-on: ubuntu-latest
