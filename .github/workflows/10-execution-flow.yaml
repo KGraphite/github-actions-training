@@ -1,6 +1,6 @@
 name: 10 - Controlling the Execution Flow
 
-do:
+on:
     push:
     workflow_dispatch:
         inputs:
