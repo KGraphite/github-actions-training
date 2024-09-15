@@ -2,7 +2,7 @@ name: 09 - Using Functions
 
 on:
   #push:
-  pull_request:
+  #pull_request:
   workflow_dispatch:
 
 jobs:
@@ -21,14 +21,14 @@ jobs:
         if: ${{ !cancelled() && contains(toJson(github.event.pull_request.title), 'fix') }}
         run: | 
           echo "I am a bug fix"
-      - name: sleep for 20 seconds
-        run: sleep 20s
-        shell: bash
+      # - name: sleep for 20 seconds
+      #   run: sleep 20s
+      #   shell: bash
       - name: Print Env Variables
         run: |
           echo "Step env var: $STEP_VAR"
-      - name: Failing step
-        run: exit 1
+      # - name: Failing step
+      #   run: exit 1
       - name: I will be skipped
         if: ${{ success() }}
         run: | 
