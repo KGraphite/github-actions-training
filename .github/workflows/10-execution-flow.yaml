@@ -1,6 +1,6 @@
 name: 10 - Controlling the Execution Flow
 on:
-  push:
+  #push:
   workflow_dispatch:
     inputs:
       pass-unit-tests:
@@ -15,7 +15,7 @@ jobs:
             echo "Linting and building project"
   unit-tests:
     runs-on: ubuntu-latest
-    continue-on-error: true
+    #continue-on-error: true # should only be used sparringly, i.e. expperimental features
     steps:
       - name: Running unit tests
         run: |
