@@ -1,8 +1,28 @@
-name:
-on:
+name: 13 - Using Caching
+on: 
+    workflow_dispatch:
+        input:
+            use-cache:
+            type: Boolean
+            default: true
+            description: Whether to execute cache step
 jobs:
-    initialize:
+    build:
         runs-on: ubuntu-latest
+        working-directory: 13-caching/react-app
         steps:
-            - name: step1
+            - name: Checkout code
               run: echo test
+            - name: Setup Node
+              run: echo test
+            - name: Install dependencies
+              run:
+                echo npm ci
+            - name: Testing
+              run: echo test
+                echo npm run test
+            - name: Building
+              run:
+                echo npm run build
+            - name: Deploying to nonprod
+              run: echo Deploying to nonprod ...
