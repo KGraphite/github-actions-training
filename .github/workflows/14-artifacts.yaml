@@ -1,6 +1,9 @@
 name: 14 - Working with Artifacts
 on:
     workflow_dispatch
+env:
+    build-artifact-key: app-${{ github.sha }}
+    test-coverage-key: test-coverage-${{ github.sha }}
 jobs:
     test-build:
         runs-on: ubuntu-latest
@@ -26,14 +29,19 @@ jobs:
                 npm ci
             - name: Unit tests
               run: |
-                npm run test
+                npm run test -- --coverage
+            - name: Upload test results
+              uses: actions/upload-artifact@v4
+              with:
+                name: $test-coverage-key #name to reference the artifact
+                path: 14-artifacts/react-app/build/coverage
             - name: Build code
               run: |
                 npm run build
             - name: Upload build files
               uses: actions/upload-artifact@v4
               with:
-                name: app #name to reference the artifact
+                name: $build-artifact-key #name to reference the artifact
                 path: 14-artifacts/react-app/build
     deploy:
         needs:
@@ -46,7 +54,7 @@ jobs:
             - name: Download build artifact
               uses: actions/download-artifact@v4
               with:
-                name: app # name of the artifact to download
+                name: $build-artifact-key # name of the artifact to download
                 path: 14-artifacts/react-app/build # where the artifact is going to be downloaded into
             - name: Show folder structure
               run: ls -ltRa
