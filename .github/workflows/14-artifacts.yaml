@@ -24,3 +24,31 @@ jobs:
               if: steps.cache.outputs.cache-hit != true
               run: |
                 npm ci
+            - name: Unit tests
+              run: |
+                npm run test
+            - name: Build code
+              run: |
+                npm run build
+            - name: Upload build files
+              uses: actions/upload-artifact@v4
+              with:
+                name: app #name to reference the artifact
+                path: 14-artifacts/react-app/build
+    deploy:
+        needs:
+            - test-build
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: 14-artifacts/react-app
+        steps:
+            - name: Download build artifact
+              uses: actions/download-artifact@v4
+              with:
+                name: app # name of the artifact to download
+                path: 14-artifacts/react-app/build # where the artifact is going to be downloaded into
+
+
+              
+                
