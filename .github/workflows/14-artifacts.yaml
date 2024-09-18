@@ -48,6 +48,8 @@ jobs:
               with:
                 name: app # name of the artifact to download
                 path: 14-artifacts/react-app/build # where the artifact is going to be downloaded into
+            - name: Show folder structure
+              run: ls -ltra
 
 
               
