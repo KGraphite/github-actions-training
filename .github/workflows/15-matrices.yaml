@@ -46,6 +46,8 @@ jobs:
                 size:
                     - small
                     - large
+                exclude: 
+                    - opacity: 75 
                 include:
                     #- opacity: 50 #moved to last item in array for testing
                     - color: red
