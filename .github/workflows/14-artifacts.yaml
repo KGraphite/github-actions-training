@@ -33,7 +33,7 @@ jobs:
             - name: Upload test results
               uses: actions/upload-artifact@v4
               with:
-                name: $test-coverage-key #name to reference the artifact
+                name: ${{ env.test-coverage-key }} #name to reference the artifact
                 path: 14-artifacts/react-app/build/coverage
             - name: Build code
               run: |
@@ -41,7 +41,7 @@ jobs:
             - name: Upload build files
               uses: actions/upload-artifact@v4
               with:
-                name: $build-artifact-key #name to reference the artifact
+                name: ${{ env.build-artifact-key }} #name to reference the artifact
                 path: 14-artifacts/react-app/build
     deploy:
         needs:
@@ -54,7 +54,7 @@ jobs:
             - name: Download build artifact
               uses: actions/download-artifact@v4
               with:
-                name: $build-artifact-key # name of the artifact to download
+                name: ${{ env.build-artifact-key}} # name of the artifact to download
                 path: 14-artifacts/react-app/build # where the artifact is going to be downloaded into
             - name: Show folder structure
               run: ls -ltRa
