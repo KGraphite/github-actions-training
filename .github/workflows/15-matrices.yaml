@@ -15,7 +15,7 @@ jobs:
               # Version Spec of the version to use in SemVer notation.
               # It also admits such aliases as lts, latest, nightly and canary builds
               # Examples: 12.x, 10.15.1, >=10.15.0, lts/Hydrogen, 16-nightly, latest, node
-              node-version: ${{ matrix.node-version }}
+                  node-version: ${{ matrix.node-version }}
             - name: Perform some tests 
               run: |
                 echo "Running tests on OS ${{ matrix.os }} and NodeJS ${{ matrix.node-version }}"
