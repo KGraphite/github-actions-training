@@ -46,6 +46,11 @@ jobs:
                 size:
                     - small
                     - large
+                exclude:
+                # if add parameter that does not exist in matrix will fail with error
+                    #- opacity: 75 # causes failure
+                    - color: green
+                      shape: circle
                 include:
                     #- opacity: 50 #moved to last item in array for testing
                     - color: red
@@ -55,6 +60,9 @@ jobs:
                     - color: red
                       shape: triangle
                     - opacity: 50 # moved to last from first spot
+                    - color: green
+                      shape: circle
+                      size: medium
         name: ${{ matrix.color }}-${{ matrix.shape }}-${{ matrix.size }}-${{ matrix.opacity }}
         runs-on: ubuntu-latest
         steps:
