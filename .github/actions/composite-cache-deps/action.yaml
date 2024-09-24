@@ -17,7 +17,7 @@ runs:
       with:
         node-version: ${{ inputs.node-version }}
     - name: Cache dependencies
-      if: cache-dependencies
+      id: cache-dependencies
       uses: actions/cache@v4
       with:
         path: "${{ inputs.working-dir }}/node_modules"
