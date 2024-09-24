@@ -23,6 +23,8 @@ jobs:
               uses: "./.github/actions/composite-cache-deps"
               with: 
                 node-version: 20.x
+                #default run does not apply to custom actions
+                working-directory: ${{env.working_directory}}
             - name: test
               run: npm run test
             - name: build
